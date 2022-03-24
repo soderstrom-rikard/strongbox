@@ -46,7 +46,7 @@
           num-short-addons 2]
 
       ;; copy some fixtures
-      ;;(fs/copy (fixture-path "catalogue--v2--curseforge.json") curse)
+      (fs/copy (fixture-path "catalogue--v2--curseforge.json") curse)
       (fs/copy (fixture-path "catalogue--v2--wowinterface.json") wowi)
       (fs/copy (fixture-path "catalogue--v2--tukui.json") tukui)
       (fs/copy (fixture-path "catalogue--v2--github.json") github)
