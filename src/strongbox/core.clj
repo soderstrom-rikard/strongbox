@@ -756,14 +756,7 @@
   ([user-catalogue-path string?, create? boolean?]
    (when (and create?
               (not (fs/exists? user-catalogue-path)))
-     (catalogue/write-empty-catalogue! user-catalogue-path))
-   (let [catalogue (catalogue/read-catalogue user-catalogue-path {:bad-data? nil})
-         curse? (fn [addon]
-                  (-> addon :source (= "curseforge")))
-         new-summary-list (->> catalogue :addon-summary-list (remove curse?) vec)]
-     (when catalogue
-       (merge catalogue {:addon-summary-list new-summary-list
-                         :total (count new-summary-list)})))))
+     (catalogue/write-empty-catalogue! user-catalogue-path))))
 
 (defn-spec set-user-catalogue! nil?
   "given a catalogue, replaces the current user-catalogue in app state and generates a source-map index for faster lookups."
