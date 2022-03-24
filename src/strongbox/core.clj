@@ -709,7 +709,7 @@
     (case (:name catalogue-location)
       :full catalogue
       :short (catalogue/shorten-catalogue catalogue)
-      ;;:curseforge (catalogue/filter-catalogue catalogue "curseforge")
+      :curseforge (catalogue/filter-catalogue catalogue "curseforge")
       :wowinterface (catalogue/filter-catalogue catalogue "wowinterface")
       :tukui (catalogue/filter-catalogue catalogue "tukui")
       nil)))

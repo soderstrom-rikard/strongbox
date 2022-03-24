@@ -37,12 +37,12 @@
     (let [full (core/find-catalogue-local-path :full)
           short (core/find-catalogue-local-path :short)
 
-          ;;curse (core/find-catalogue-local-path :curseforge)
+          curse (core/find-catalogue-local-path :curseforge)
           wowi (core/find-catalogue-local-path :wowinterface)
           tukui (core/find-catalogue-local-path :tukui)
           github (core/find-catalogue-local-path :github)
 
-          num-full-addons (- 4 1) ;; 2022-01-22: curseforge not present in full catalogue
+          num-full-addons 4
           num-short-addons 2]
 
       ;; copy some fixtures
