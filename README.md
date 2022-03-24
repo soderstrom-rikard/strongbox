@@ -4,7 +4,7 @@
 
 It runs on Linux and macOS.
 
-It supports addons hosted by ~Curseforge,~ wowinterface.com, Tukui, Github and Gitlab.
+It supports addons hosted by Curseforge, wowinterface.com, Tukui, Github and Gitlab.
 
 ---
 
@@ -67,7 +67,7 @@ Afterwards, use the `Update all` button to update all addons with new versions a
 * [catalogue search](#catalogue-search)
 * [bulk update](#bulk-update)
 * [install addons from multiple sources](#install-addons-from-multiple-sources):
-    - ~Curseforge~
+    - Curseforge
     - wowinterface.com
     - Tukui
     - Github (using *releases*)
@@ -108,7 +108,7 @@ that it's my privilege to offer this small piece back.
 
 This software interacts with the following remote hosts:
 
-* ~Overwolf/Twitch/Curseforge [Addons API](https://addons-ecs.forgesvc.net/) and its [CDN](https://edge.forgecdn.net/)~
+* Overwolf/Twitch/Curseforge [Addons API](https://addons-ecs.forgesvc.net/) and its [CDN](https://edge.forgecdn.net/)
 * [wowinterface.com](https://wowinterface.com)
 * [www.tukui.org](https://www.tukui.org/api.php)
 * [api.github.com](https://developer.github.com/v3/repos/releases)
@@ -182,7 +182,7 @@ Click `File` from the top menu and select `Import addon` and paste the URL of th
 
 Strongbox supports searching for addons from the following addon hosts:
 
-* ~[Curseforge](https://www.curseforge.com/wow/addons)~
+* [Curseforge](https://www.curseforge.com/wow/addons)
 * [wowinterface.com](https://wowinterface.com/addons.php)
 * [Tukui](https://www.tukui.org)
 * [Github](https://github.com)
@@ -224,7 +224,7 @@ Click the `Update all` button next to your addon directory.
 
 Strongbox supports installing addons from the following addon hosts:
 
-* ~[Curseforge](https://www.curseforge.com/wow/addons)~
+* [Curseforge](https://www.curseforge.com/wow/addons)
 * [wowinterface.com](https://wowinterface.com/addons.php)
 * [Tukui](https://www.tukui.org)
 * [Github](https://www.github.com)
@@ -313,7 +313,7 @@ Right-click an addon and select `Release`.
 
 Strongbox currently supports installing previous releases for:
 
-* ~Curseforge~
+* Curseforge
 * Github
 * Gitlab
 
