@@ -116,9 +116,9 @@
                        {:source "wowinterface"
                         :source-id x-wowi-id})
 
-         ;;curse-source (when-let [x-curse-id (-> keyvals :x-curse-project-id utils/to-int)]
-         ;;               {:source "curseforge"
-         ;;                :source-id x-curse-id})
+         curse-source (when-let [x-curse-id (-> keyvals :x-curse-project-id utils/to-int)]
+                        {:source "curseforge"
+                         :source-id x-curse-id})
 
          tukui-source (when-let [x-tukui-id (-> keyvals :x-tukui-projectid utils/to-int)]
                         {:source "tukui"
@@ -128,9 +128,7 @@
                          {:source "github"
                           :source-id (utils/github-url-to-source-id x-github)})
 
-         source-map-list (when-let [items (->> [wowi-source tukui-source github-source
-                                                ;;curse-source
-                                                ]
+         source-map-list (when-let [items (->> [wowi-source curse-source tukui-source github-source]
                                                utils/items
                                                utils/nilable)]
                            {:source-map-list items})
@@ -174,7 +172,7 @@
          ;; prefers tukui over wowi, wowi over github.
          ;; github requires API calls to interact with and these are limited unless authenticated.
          addon (merge addon
-                      github-source wowi-source tukui-source
+                      github-source wowi-source tukui-source curse-source
                       ignore-flag source-map-list)]
 
      addon)))
