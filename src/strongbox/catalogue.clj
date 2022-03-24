@@ -22,7 +22,10 @@
 (defn-spec host-disabled? boolean?
   "returns `true` if the addon host has been disabled"
   [addon map?]
-  (-> addon :source (= "curseforge")))
+  (when (-> addon :source (= "curseforge"))
+    (warn (utils/message-list (str "addon host 'curseforge' will be disabled " constants/curseforge-cutoff-label)
+                              ["use 'Source' and 'Find similar' from the addon context menu"])))
+  false)
 
 (defn-spec -expand-summary (s/or :ok :addon/expanded, :error nil?)
   "fetches updates from the addon host for the given `addon` and `game-track`.
@@ -68,8 +71,7 @@
         game-track (some #{game-track} sp/game-tracks)] ;; :retail => :retail, :unknown-game-track => nil
     (cond
       (not game-track) (error (format "unsupported game track '%s'." (str game-track*)))
-      (host-disabled? addon) (warn (utils/message-list (str "addon host 'curseforge' was disabled " constants/curseforge-cutoff-label ".")
-                                                       ["use 'Source' and 'Find similar' from the addon context menu for alternatives."]))
+      (host-disabled? addon) (error (format "addon host '%s' has been disabled." (:source addon)))
       :else (if-let [source-updates (if strict?
                                       (-expand-summary addon game-track)
                                       (utils/first-nn (partial -expand-summary addon) (get track-map game-track)))]
